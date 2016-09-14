@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63D3DB2BA4FB409A568AB9AA /* Pods_DevChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D2376E0722122EAE2F1FC0 /* Pods_DevChat.framework */; };
 		850167361D88D2F800F23033 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850167351D88D2F800F23033 /* AppDelegate.swift */; };
 		850167381D88D2F800F23033 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850167371D88D2F800F23033 /* CameraVC.swift */; };
 		8501673B1D88D2F800F23033 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 850167391D88D2F800F23033 /* Main.storyboard */; };
@@ -14,9 +15,11 @@
 		850167401D88D2F800F23033 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8501673E1D88D2F800F23033 /* LaunchScreen.storyboard */; };
 		8501675F1D88DC8200F23033 /* AAPLCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8501675E1D88DC8200F23033 /* AAPLCameraViewController.m */; };
 		850167621D88DCD000F23033 /* AAPLPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 850167611D88DCD000F23033 /* AAPLPreviewView.m */; };
+		85569C691D89C4BF00A6E20F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85569C681D89C4BF00A6E20F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42D2376E0722122EAE2F1FC0 /* Pods_DevChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		850167321D88D2F800F23033 /* DevChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		850167351D88D2F800F23033 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		850167371D88D2F800F23033 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
@@ -30,6 +33,9 @@
 		850167601D88DCD000F23033 /* AAPLPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLPreviewView.h; sourceTree = "<group>"; };
 		850167611D88DCD000F23033 /* AAPLPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLPreviewView.m; sourceTree = "<group>"; };
 		850167661D88E71300F23033 /* AAPLCameraVCDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAPLCameraVCDelegate.h; sourceTree = "<group>"; };
+		85569C681D89C4BF00A6E20F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		91F9F3DD39319635688269E0 /* Pods-DevChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevChat/Pods-DevChat.debug.xcconfig"; sourceTree = "<group>"; };
+		C4D85C653E2162BAFC05E3BE /* Pods-DevChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevChat/Pods-DevChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63D3DB2BA4FB409A568AB9AA /* Pods_DevChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2432FDCC1F8CADC9F02B30E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42D2376E0722122EAE2F1FC0 /* Pods_DevChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65E53B8B8B369F8E1F457140 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91F9F3DD39319635688269E0 /* Pods-DevChat.debug.xcconfig */,
+				C4D85C653E2162BAFC05E3BE /* Pods-DevChat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		850167291D88D2F800F23033 = {
 			isa = PBXGroup;
 			children = (
 				850167341D88D2F800F23033 /* DevChat */,
 				850167331D88D2F800F23033 /* Products */,
+				65E53B8B8B369F8E1F457140 /* Pods */,
+				2432FDCC1F8CADC9F02B30E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +97,7 @@
 				8501673E1D88D2F800F23033 /* LaunchScreen.storyboard */,
 				850167411D88D2F800F23033 /* Info.plist */,
 				850167471D88D60E00F23033 /* DevChat-Bridging-Header.h */,
+				85569C681D89C4BF00A6E20F /* GoogleService-Info.plist */,
 			);
 			path = DevChat;
 			sourceTree = "<group>";
@@ -109,9 +136,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 850167441D88D2F800F23033 /* Build configuration list for PBXNativeTarget "DevChat" */;
 			buildPhases = (
+				6D798043F2502779CE00F01D /* [CP] Check Pods Manifest.lock */,
 				8501672E1D88D2F800F23033 /* Sources */,
 				8501672F1D88D2F800F23033 /* Frameworks */,
 				850167301D88D2F800F23033 /* Resources */,
+				79DCC30A3A3B6F5A763E850F /* [CP] Embed Pods Frameworks */,
+				FB9D8B75E51D1C0A5FA0A65A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,12 +194,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				850167401D88D2F800F23033 /* LaunchScreen.storyboard in Resources */,
+				85569C691D89C4BF00A6E20F /* GoogleService-Info.plist in Resources */,
 				8501673D1D88D2F800F23033 /* Assets.xcassets in Resources */,
 				8501673B1D88D2F800F23033 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6D798043F2502779CE00F01D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		79DCC30A3A3B6F5A763E850F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DevChat/Pods-DevChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB9D8B75E51D1C0A5FA0A65A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DevChat/Pods-DevChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8501672E1D88D2F800F23033 /* Sources */ = {
@@ -298,6 +377,7 @@
 		};
 		850167451D88D2F800F23033 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91F9F3DD39319635688269E0 /* Pods-DevChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -315,6 +395,7 @@
 		};
 		850167461D88D2F800F23033 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4D85C653E2162BAFC05E3BE /* Pods-DevChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

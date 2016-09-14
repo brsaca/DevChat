@@ -56,6 +56,8 @@
                     </view>
                     <connections>
                         <outlet property="_previewView" destination="kTW-6D-RNb" id="EAp-i2-BdR"/>
+                        <outlet property="cameraBtn" destination="Ijm-7s-qeg" id="6fa-c4-yW9"/>
+                        <outlet property="recordBtn" destination="JtF-UW-mDZ" id="Y2B-dd-g1t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

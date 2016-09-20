@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+
+let segueUsers = "segueUsers"
 
 class CameraVC: AAPLCameraViewController, AAPLCameraVCDelegate {
     
@@ -19,6 +22,16 @@ class CameraVC: AAPLCameraViewController, AAPLCameraVCDelegate {
         self.previewView = _previewView
         super.viewDidLoad()
     }
+    
+    override func viewDidAppear(_ animated: Bool){
+        
+        //performSegue(withIdentifier: "LoginVC", sender:nil)
+        
+        guard FIRAuth.auth()?.currentUser != nil else{
+            performSegue(withIdentifier: "LoginVC", sender:nil)
+            return
+        }
+    }
 
     //MARK: IBAction
     @IBAction func recordBtnPressed(_ sender: UIButton) {
@@ -28,6 +41,19 @@ class CameraVC: AAPLCameraViewController, AAPLCameraVCDelegate {
     
     @IBAction func changeCameraBtnPressed(_ sender: UIButton) {
         self.changeCamera()
+    }
+    
+    //MARK: Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let usersVC = segue.destination as? UsersVC {
+            if let videoDict = sender as? Dictionary<String,URL>{
+                let url = videoDict["videoURL"]
+                usersVC.videoURL = url
+            }else if let imageDict = sender as? Dictionary<String,Data>{
+                let snapData = imageDict["snapData"]
+                usersVC.snapData = snapData
+            }
+        }
     }
     
     //MARK: AAPLCameraVCDelegate
@@ -45,6 +71,22 @@ class CameraVC: AAPLCameraViewController, AAPLCameraVCDelegate {
     
     func recordingHasStarted() {
         print("Can start recording")
+    }
+    
+    func videoRecordingComplet(_ videoURL: URL!) {
+        performSegue(withIdentifier: segueUsers, sender: ["videoURL":videoURL])
+    }
+    
+    func videoRecordingFailed() {
+        
+    }
+    
+    func snapshotTaken(_ snapshotData: Data!) {
+        performSegue(withIdentifier: segueUsers, sender: ["snapshotData":snapshotData])
+    }
+    
+    func snapshotFailed() {
+        
     }
 }
 

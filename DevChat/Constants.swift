@@ -12,6 +12,7 @@ struct Constants {
     
     static let FIR_CHILD_USERS = "users"
     static let FIR_CHILD_USERS_PROFILE = "profile"
+    static let FIR_CHILD_PULLREQUESTS = "pullRequests"
     static let FIR_CHILD_USERS_PROFILE_FIRSTNAME = "firstName"
     static let FIR_CHILD_USERS_PROFILE_LASTNAME = "firstName"
     static let FIR_URL_STORAGE = "gs://devchat-a3d4e.appspot.com"

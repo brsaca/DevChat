@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseStorage
+import FirebaseAuth
 
 class UsersVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -78,6 +79,7 @@ class UsersVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         markCell(tableView, atIndexPath: indexPath, withStatus: false)
+        navigationItem.rightBarButtonItem?.isEnabled = selectedUsers.count > 0 ? true : false
     }
     
     func markCell(_ tableView: UITableView, atIndexPath indexPath: IndexPath, withStatus status:Bool){
@@ -90,8 +92,6 @@ class UsersVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }else{
             selectedUsers[user.uid] = nil
         }
-        
-        navigationItem.rightBarButtonItem?.isEnabled = selectedUsers.count > 0 ? true : false
     }
     
     //MARK: IBAction
@@ -105,9 +105,10 @@ class UsersVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     print("Error uploading video: \(err?.localizedDescription)")
                 }else{
                     let downloadURL = meta!.downloadURL()
-                    self.dismiss(animated: true, completion: nil)
+                    DataService.instance.sendMediaPullRequest(senderUID: FIRAuth.auth()!.currentUser!.uid, sendingTo: self.selectedUsers, mediaURL:downloadURL!, textSnippet:"Coding its the best!!!")
                 }
             })
+            self.dismiss(animated: true, completion: nil)
         }else if let snap = _snapData {
             let snapName = "\(NSUUID().uuidString).jpg"
             let ref = DataService.instance.imagesStorageRef.child(snapName)
@@ -117,10 +118,11 @@ class UsersVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     print("Error uploading snap: \(err?.localizedDescription)")
                 }else{
                     let downloadURL = meta!.downloadURL()
-                    self.dismiss(animated: true, completion: nil)
+                     DataService.instance.sendMediaPullRequest(senderUID: FIRAuth.auth()!.currentUser!.uid, sendingTo: self.selectedUsers, mediaURL:downloadURL!, textSnippet:"Coding its the best!!!")
                 }
             })
             
+            self.dismiss(animated: true, completion: nil)
             
         }
     }
